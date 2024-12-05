@@ -86,34 +86,6 @@ body, html {
     text-align: center;
 }
 
-/* Contact Page Styles */
-.contact-page {
-    text-align: center;
-    padding: 20px;
-}
-
-.contact-page h1 {
-    font-size: 36px; /* Increase the font size of the heading */
-}
-
-.contact-page p {
-    font-size: 18px; /* Increase the font size of the text */
-    margin-bottom: 20px;
-}
-
-.contact-page .whatsapp-icon {
-    font-size: 50px; /* Adjust icon size */
-    display: inline-block;
-    margin: 10px;
-    color: #25D366;
-    text-decoration: none;
-}
-
-.contact-page .whatsapp-icon:hover {
-    color: #128C7E; /* Change color on hover */
-    transition: color 0.3s ease;
-}
-
 /* Centering the calendar */
 .calendar-container {
     display: flex;
