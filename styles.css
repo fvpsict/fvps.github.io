@@ -1,0 +1,106 @@
+/* General Reset and Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;  /* Prevent navbar overlap */
+    background-color: #f4f4f9;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed; /* Fixed navbar */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Optional: Adds shadow */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Menu Styles */
+.menu {
+    display: flex;
+}
+
+.menu a {
+    margin: 0 5px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Mobile Menu Toggle */
+@media screen and (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+    .menu a {
+        text-align: center;
+    }
+    .menu.active {
+        display: flex;
+    }
+    .toggle {
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        display: block;
+    }
+}
+
+/* Form Container Styles */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Element Styles */
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit Button Styles */
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
