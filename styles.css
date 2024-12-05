@@ -86,22 +86,7 @@ body, html {
     text-align: center;
 }
 
-/* Calendar Page Styles */
-.calendar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0; /* Add spacing above and below */
-    height: calc(100vh - 100px); /* Adjust height to fit the viewport minus header */
-}
 
-.calendar-container iframe {
-    width: 100%;
-    max-width: 800px; /* Limit maximum width of the iframe */
-    height: 600px; /* Set desired height */
-    border: 0; /* Optional border for visibility */
-    border-radius: 8px; /* Rounded corners for aesthetics */
-}
 
 
 
