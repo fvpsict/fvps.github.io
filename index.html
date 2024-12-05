@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - FVPS ICT Microsite</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Link to the external CSS file -->
+    <title>Header with Menu Bar</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">FVPS ICT Microsite</div>
+    <!-- Menu Bar Header -->
+    <header class="navbar">
+        <div class="logo">My Website</div>
         <div class="toggle" onclick="toggleMenu()">☰</div>
-        <div class="menu">
+        <nav class="menu">
             <a href="index.html">Home</a>
-            <a href="ictrequest.html">ICT Request</a>
-            <a href="#calendar">Booking Calendar</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <h1>Welcome to the FVPS ICT Microsite</h1>
-        <p>Here, you can request ICT services, check the booking calendar, and more!</p>
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is the homepage. Feel free to explore!</p>
     </div>
 
+    <!-- JavaScript for Toggle Menu -->
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
