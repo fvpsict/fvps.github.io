@@ -100,17 +100,16 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">My Website</div>
-            <div class="menu">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">FVPS ICT Microsite</div>
+        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#ictrequest">ICT Request</a>
+            <a href="#Calendar">Booking Calendar</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
     <section class="hero" id="home">
         <h1>Welcome to My Website</h1>
         <p>Your one-stop solution for all your needs.</p>
