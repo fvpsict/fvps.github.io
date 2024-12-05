@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICT Request Form</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Link to the external CSS file -->
+    <title>ICT Request Form - FVPS ICT Microsite</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Menu Bar Header -->
@@ -18,47 +18,23 @@
             <a href="mims.html">Student iCON</a>
             <a href="contact.html">Contact</a>
         </nav>
+    </header>
 
-    <div class="container">
+    <!-- Main Content -->
+    <div class="content">
         <h1>ICT Request Form</h1>
-        <form action="/submit-request" method="post">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="department">Department</label>
-            <select id="department" name="department" required>
-                <option value="">-- Select Department --</option>
-                <option value="hr">Human Resources</option>
-                <option value="finance">Finance</option>
-                <option value="it">IT</option>
-                <option value="marketing">Marketing</option>
-                <option value="operations">Operations</option>
-            </select>
-
-            <label for="request-type">Request Type</label>
-            <select id="request-type" name="request-type" required>
-                <option value="">-- Select Request Type --</option>
-                <option value="new-hardware">New Hardware</option>
-                <option value="software-issue">Software Issue</option>
-                <option value="network-issue">Network Issue</option>
-                <option value="other">Other</option>
-            </select>
-
-            <label for="description">Request Description</label>
-            <textarea id="description" name="description" rows="5" placeholder="Provide details about your request" required></textarea>
-
-            <label for="priority">Priority</label>
-            <select id="priority" name="priority" required>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
-
-            <button type="submit">Submit Request</button>
-        </form>
+        <p>Please use the form below to submit your ICT request.</p>
+        
+        <!-- Embed Google Form -->
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLScCew5m4k6uijRRPrT2vdfE5x9H9IeUnf6xLIFdUc59oEcn8w/viewform?embedded=true" 
+            width="100%" 
+            height="1200" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+        </iframe>
     </div>
 
     <script>
