@@ -115,10 +115,11 @@
         <p>Your one-stop solution for all your needs.</p>
         <button>Get Started</button>
     </section>
-    <section class="section" id="about">
-        <h2>About Us</h2>
+    <section class="section" id="home">
+        <h2>Home</h2>
         <p>We are committed to providing the best services to our customers. Our team is dedicated to ensuring your satisfaction.</p>
     </section>
+
     <section class="section" id="services">
         <h2>Our Services</h2>
         <div class="services">
