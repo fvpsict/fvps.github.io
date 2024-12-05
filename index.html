@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Bar</title>
+    <title>Home - FVPS ICT Microsite</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            padding-top: 50px; /* Prevent navbar overlap */
         }
         .navbar {
             display: flex;
@@ -15,6 +16,11 @@
             align-items: center;
             background-color: #333;
             padding: 10px 20px;
+            position: fixed; /* Fixed navbar */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Optional: Adds shadow */
         }
         .navbar a {
             color: white;
@@ -65,12 +71,17 @@
         <div class="logo">FVPS ICT Microsite</div>
         <div class="toggle" onclick="toggleMenu()">☰</div>
         <div class="menu">
-            <a href="index.html">Home</a> <!-- Link to Home page -->
-            <a href="ictrequest.html">ICT Request</a> <!-- Link to ICT Request page -->
+            <a href="index.html">Home</a>
+            <a href="ictrequest.html">ICT Request</a>
             <a href="#calendar">Booking Calendar</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
+
+    <div class="container">
+        <h1>Welcome to the FVPS ICT Microsite</h1>
+        <p>Here, you can request ICT services, check the booking calendar, and more!</p>
+    </div>
 
     <script>
         function toggleMenu() {
@@ -78,11 +89,5 @@
             menu.classList.toggle('active');
         }
     </script>
-
-    <div class="container">
-        <h1>Welcome to the FVPS ICT Microsite</h1>
-        <p class="welcome-text">Here, you can request ICT services, check the booking calendar, and more!</p>
-    </div>
-    
 </body>
 </html>
