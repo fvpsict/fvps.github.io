@@ -114,3 +114,15 @@ body, html {
     transition: color 0.3s ease;
 }
 
+/* Centering the calendar */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* Add some spacing */
+}
+
+iframe {
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
