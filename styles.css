@@ -5,46 +5,42 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-/* Navbar/Header Styles */
+/* Navbar Header Styles */
 .navbar {
     display: flex;
-    justify-content: center; /* Align items to the left */
-    align-items: center;
-    background-color: #333;
-    color: white;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #444; /* Darker background */
     padding: 10px 20px;
-    position: fixed;
+    position: sticky;
     top: 0;
-    width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo */
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-right: auto; /* Add some space between the logo and the menu */
-    color: white;
+/* Logo Styling */
+.navbar .logo img {
+    height: 50px; /* Adjust the height of the logo */
+    width: auto;  /* Maintain the aspect ratio */
+    margin-right: 20px; /* Space between logo and menu */
 }
 
-/* Menu Items */
-.menu {
+/* Menu Styling */
+.navbar .menu {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
-.menu a {
-    color: white;
+.navbar .menu a {
+    color: #f4f4f9;
     text-decoration: none;
-    padding: 8px 15px;
+    padding: 10px 15px;
+}
+
+.navbar .menu a:hover {
+    background-color: #575757;
     border-radius: 5px;
 }
 
-.menu a:hover {
-    background-color: #575757;
-}
 
 /* Mobile Toggle Menu */
 .toggle {
