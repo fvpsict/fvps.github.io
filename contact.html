@@ -6,6 +6,25 @@
     <title>Contact - FVPS ICT Microsite</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Menu Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .menu a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* WhatsApp Section */
         .whatsapp-container {
             text-align: center;
             margin-top: 50px;
@@ -19,6 +38,20 @@
         .whatsapp-container p {
             font-size: 18px;
             margin: 10px 0;
+        }
+        /* Contact Page Styling */
+        .contact-page {
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .contact-page h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .contact-page p {
+            font-size: 1.2rem;
+            color: #555;
         }
     </style>
 </head>
@@ -40,9 +73,13 @@
     <div class="contact-page">
         <h1>Contact Us</h1>
         <p>Click on the icon below to WhatsApp the ICT Team or contact us at <strong>@91394595</strong>.</p>
-        <a href="https://wa.me/91394595" class="whatsapp-icon">
-            <img src="whatsapp-icon.png" alt="WhatsApp Icon" width="80" height="80"> <!-- Replace with an appropriate icon path -->
-        </a>
+
+        <!-- WhatsApp Icon -->
+        <div class="whatsapp-container">
+            <a href="https://wa.me/91394595" class="whatsapp-icon">
+                <img src="whatsapp-icon.png" alt="WhatsApp Icon"> <!-- Replace with an appropriate icon path -->
+            </a>
+        </div>
     </div>
 
     <script>
