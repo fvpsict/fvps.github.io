@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FVPS ICT Microsite</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            width: 100%; /* Ensure images scale well */
+            max-width: 200px; /* Limit max width for images */
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <!-- Menu Bar Header -->
@@ -20,28 +43,35 @@
     </header>
 
     <!-- Main Content -->
-  
     <div class="content">
         <p style="font-size:160%;">Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT in this site.</p>
     </div>
-    
+
     <h1 style="text-align: center;">Announcements & Updates</h1>
-    
-    <div style="display: flex; justify-content: center; gap: 50px; margin-top: 20px;">
-        <div style="text-align: center; display: block;">
-            <a href="23H2 User Guide.pdf" target="_blank">
-                <img src="Images/update.jpg" alt="Image 1" style="width: 120%; height: auto;">
-            </a>
-            <p style="margin-top: 20px;">Update your devices to 23H2</p>
-        </div>
-    
-        <div style="text-align: center; display: block;">
-            <a href="23H2 User Guide.pdf" target="_blank">
-                <img src="Images/update.jpg" alt="Image 2" style="width: 120%; height: auto;">
-            </a>
-            <p style="margin-top: 20px;">Update your devices to 23H2</p>
-        </div>
-    </div>
+
+    <!-- Table for Images and Links -->
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>
+                <a href="23H2 User Guide.pdf" target="_blank">
+                    <img src="Images/update.jpg" alt="Image 1">
+                </a>
+            </td>
+            <td>Update your devices to 23H2</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="23H2 User Guide.pdf" target="_blank">
+                    <img src="Images/update.jpg" alt="Image 2">
+                </a>
+            </td>
+            <td>Update your devices to 23H2</td>
+        </tr>
+    </table>
 
     <script>
         function toggleMenu() {
