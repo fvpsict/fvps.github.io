@@ -31,19 +31,15 @@ body, html {
 }
 
 .navbar .menu a {
-    color: #f4f4f9;
+    color: #f4f4f9;  /* Default text color */
     text-decoration: none;
     padding: 10px 15px;
 }
 
 .navbar .menu a:hover {
-    background-color: #575757; /* Mouse-over color */
-    color: #ffffff;           /* Ensure text contrasts well */
-    border-radius: 5px;       /* Keep the rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    color: #575757;  /* Change the text color on hover */
+    transition: color 0.3s ease;  /* Smooth transition for the text color */
 }
-
-
 
 /* Mobile Toggle Menu */
 .toggle {
