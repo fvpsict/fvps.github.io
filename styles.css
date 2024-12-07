@@ -37,7 +37,7 @@ body, html {
 }
 
 .navbar .menu a:hover {
-    color: #575757;  /* Change the text color on hover */
+    color: #FFD700;  /* Change the text color on hover */
     transition: color 0.3s ease;  /* Smooth transition for the text color */
 }
 
