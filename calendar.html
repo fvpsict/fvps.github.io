@@ -20,23 +20,34 @@
     </header>
 
     <!-- Main Content -->
-    <h1 style="text-align: center; margin-top: 0;display: flex; justify-content: center; align-items: center;">Booking Calendar</h1>
-    <iframe src="https://docs.google.com/spreadsheets/d/1dir07krdXNLVo1u_uM8IG2Lq7srGrJ2B1lnCINizDkg/preview" 
-        width="80%" 
-        height="800" 
-        frameborder="2" 
-        allowfullscreen>
-    </iframe>
+    <h1 style="text-align: center; margin-top: 0; display: flex; justify-content: center; align-items: center;">Booking Calendar</h1>
+    
+    <!-- Container for iframe -->
+    <div class="iframe-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/1dir07krdXNLVo1u_uM8IG2Lq7srGrJ2B1lnCINizDkg/preview" 
+            width="80%" 
+            height="800" 
+            allowfullscreen>
+        </iframe>
+    </div>
 
+    <!-- Custom Styles -->
     <style>
-    .iframe-container iframe {
-        border: 4px solid #007BFF; /* Blue border */
-        border-radius: 8px; /* Rounded corners */
-    }
-    </style>
-        
-</div>
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
 
+        .iframe-container iframe {
+            border: 4px solid #007BFF; /* Blue border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for aesthetics */
+        }
+    </style>
+
+    <!-- JavaScript for Menu Toggle -->
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
