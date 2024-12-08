@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student iCON - FVPS ICT Microsite</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .main-content {
+            text-align: center; /* Center align text */
+            margin: 20px auto; /* Add vertical spacing */
+            max-width: 800px; /* Optional: Limit width for better readability */
+        }
+    </style>
 </head>
 <body>
     <!-- Menu Bar -->
@@ -20,9 +27,12 @@
     </header>
 
     <!-- Main Content -->
-    <h1 style="font-size:200%; text-align: center;">Student iCON</h1>
-    <p>Welcome to the Student iCON page! Resources and links will be provided here.</p>
-        
+    <div class="main-content">
+        <h1 style="font-size: 200%;">Student iCON</h1>
+        <p>Welcome to the Student iCON page! Resources and links will be provided here.</p>
+    </div>
+
+    <!-- JavaScript for Menu Toggle -->
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
