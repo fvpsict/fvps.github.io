@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student iCON - FVPS ICT Microsite</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .main-content {
+            text-align: center; /* Center align text */
+            margin: 20px auto; /* Add vertical spacing */
+            max-width: 800px; /* Optional: Limit width for better readability */
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Bar -->
+    <header class="navbar">
+        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="ictrequest.html">ICT Request</a>
+            <a href="calendar.html">Booking Calendar</a>
+            <a href="mims.html">Student iCON</a>
+            <a href="sls.html">SLS</a>
+            <a href="venue.html">Venue Booking</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 style="font-size: 200%;">Venue Booking</h1>
+        <p>.</p>
+    </div>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
