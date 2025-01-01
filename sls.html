@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student iCON - FVPS ICT Microsite provides easy access to ICT resources and tools like SLS, venue booking, and more.">
+    <meta name="keywords" content="Student iCON, FVPS, ICT Microsite, SLS, Booking Calendar, ICT Request">
+    <meta name="author" content="FVPS ICT Team">
     <title>Student iCON - FVPS ICT Microsite</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .navbar .menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .navbar .menu.active {
+            display: flex;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .navbar .menu a:hover {
+            color: #007BFF;
+        }
+        .toggle {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
         .main-content {
             text-align: center;
             margin: 20px auto;
@@ -16,10 +53,10 @@
         }
         .main-content p {
             font-size: 1.5em;
-            text-align: center;
         }
         .highlighted-text {
-            font-size: 2em; /* Increase font size for specific sections */
+            font-size: 2em;
+            color: #007BFF; /* Highlight color */
         }
         @media (max-width: 768px) {
             .main-content h1 {
@@ -37,13 +74,13 @@
 <body>
     <!-- Menu Bar -->
     <header class="navbar">
-        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <div class="toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</div>
         <nav class="menu">
             <a href="index.html">Home</a>
             <a href="ictrequest.html">ICT Request</a>
             <a href="calendar.html">Booking Calendar</a>
             <a href="mims.html">Student iCON</a>
-            <a href="sls.html">SLS</a>
+            <a href="sls.html" class="active">SLS</a>
             <a href="venue.html">Venue Booking</a>
             <a href="contact.html">Contact</a>
         </nav>
