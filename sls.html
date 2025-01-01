@@ -7,9 +7,30 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .main-content {
-            text-align: center; /* Center align text */
-            margin: 20px auto; /* Add vertical spacing */
-            max-width: 800px; /* Optional: Limit width for better readability */
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .main-content h1 {
+            font-size: 2em;
+        }
+        .main-content p {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .highlighted-text {
+            font-size: 2em; /* Increase font size for specific sections */
+        }
+        @media (max-width: 768px) {
+            .main-content h1 {
+                font-size: 1.5em;
+            }
+            .main-content p {
+                font-size: 1.2em;
+            }
+            .highlighted-text {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -30,14 +51,11 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <h1 style="font-size: 200%;">Student Learning Space(SLS)</h1>
-        <p style="font-size:60px; text-align: center;">Welcome to the Student Learning Space page! </p><br><br>
-        <p style="font-size:60px;>Students to use MIMS login detials to login to their SLS. <br>
-        The format of their MIMS ID is <b>name@students.edu.sg</b>
-        <br>
-        For example Student name: Joe Lim <br>
-        MIMS ID will be joe_lim@students.edu.sg
-        </p>
+        <h1>Student Learning Space (SLS)</h1>
+        <p class="highlighted-text">Welcome to the Student Learning Space page!</p>
+        <p class="highlighted-text">Students are to use their MIMS login details to log in to their SLS. 
+        The format of their MIMS ID is <b>name@students.edu.sg</b>.</p>
+        <p>For example, a student named Joe Lim will have a MIMS ID: <b>joe_lim@students.edu.sg</b>.</p>
     </div>
 
     <!-- JavaScript for Menu Toggle -->
