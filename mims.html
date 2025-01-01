@@ -9,34 +9,43 @@
         .main-content {
             text-align: center; /* Center align text */
             margin: 20px auto; /* Add vertical spacing */
-            max-width: 800px; /* Optional: Limit width for better readability */
+            max-width: 800px; /* Limit width for better readability */
+        }
+
+        .menu a:hover {
+            color: #007BFF; /* Change link color on hover */
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+        .icon-details {
+            font-size: 1.5em; /* Increase font size */
+            line-height: 1.6; /* Improve readability */
         }
     </style>
 </head>
 <body>
     <!-- Menu Bar -->
     <header class="navbar">
-        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <div class="toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</div>
         <nav class="menu">
-            <a href="index.html">Home</a>
-            <a href="ictrequest.html">ICT Request</a>
-            <a href="calendar.html">Booking Calendar</a>
-            <a href="mims.html">Student iCON</a>
-            <a href="sls.html">SLS</a>
-            <a href="venue.html">Venue Booking</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" title="Go to Home Page">Home</a>
+            <a href="ictrequest.html" title="Submit an ICT Request">ICT Request</a>
+            <a href="calendar.html" title="View Booking Calendar">Booking Calendar</a>
+            <a href="mims.html" title="Access Student iCON">Student iCON</a>
+            <a href="sls.html" title="Access SLS">SLS</a>
+            <a href="venue.html" title="Book a Venue">Venue Booking</a>
+            <a href="contact.html" title="Contact Us">Contact</a>
         </nav>
-
     </header>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <main class="main-content">
         <h1 style="font-size: 200%;">Student iCON</h1>
         <p>Welcome to the Student iCON page! Resources and links will be provided here.</p><br><br>
 
-        <p>To access to Student iCON Details, you can find the list in here</p> <br>
-        <p style="font-szie:80px;">Sharing:\_Fernvale Mall\CR 4_Resource Management\4.7 Information\Student Information\Student iCON</p>
-    </div>
+        <p class="icon-details">To access Student iCON details, you can find the list here:</p>
+        <p class="icon-details">Sharing:\_Fernvale Mall\CR 4_Resource Management\4.7 Information\Student Information\Student iCON</p>
+    </main>
 
     <!-- JavaScript for Menu Toggle -->
     <script>
