@@ -10,10 +10,11 @@
         /* Table Styling */
         table {
             border-collapse: collapse;
-            margin: 0px auto; /* Center the table */
+            margin: 20px auto; /* Center the table */
+            width: 90%;
         }
         table, th, td {
-            border: 2px solid black; /* Add a light border */
+            border: 2px solid black; /* Add a solid border */
         }
         th, td {
             padding: 10px;
@@ -21,25 +22,69 @@
         }
         th {
             background-color: black;
-            color: white
+            color: white;
         }
         img {
-            max-width: 200px; /* Limit image width */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 150px; /* Adjusted for 4-column layout */
+            height: auto;
         }
-
-         .content p {
-            margin-bottom: 0; /* Remove margin between paragraph and next element */
-        }   
-
         h1 {
-        text-align: center;
-        margin-top: 0; /* Remove top margin */
-        margin-bottom: 10px; /* Optional, adjust bottom margin */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #333;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        .menu a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+        .toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: #333;
+                width: 100%;
+                top: 50px;
+                left: 0;
+                padding: 10px;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .toggle {
+                display: block;
+            }
+            table {
+                font-size: 12px; /* Adjust font size for mobile */
+            }
+            img {
+                max-width: 100px;
+            }
         }
     </style>
-
-    
 </head>
 <body>
     <!-- Menu Bar Header -->
@@ -53,51 +98,62 @@
             <a href="sls.html">SLS</a>
             <a href="venue.html">Venue Booking</a>
             <a href="contact.html">Contact</a>
-            
         </nav>
     </header>
 
     <!-- Main Content -->
-    <p style="font-size:200%; text-align: center;">Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT in this site.</p>
-    <h1 style="text-align: center; margin-top: 0;">Announcements & Updates</h1>
+    <p style="font-size:200%; text-align: center;">
+        Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT on this site.
+    </p>
+    <h1>Announcements & Updates</h1>
 
-    <!-- Table for Images and Links -->
+    <!-- Table with 4 Columns -->
     <table>
         <tr>
             <th>Guide Handout</th>
-            <th>Item Description</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
         </tr>
         <tr>
             <td>
                 <a href="ICT Guide/MS Teams for Staff.pdf" target="_blank">
-                    <img src="Images/MS Teams.png" alt="MS Teams">
+                    <img src="Images/MS Teams.png" alt="Microsoft Teams Guide">
                 </a>
             </td>
-            <td><b></b>Click to know how to use Microsoft Teams</td></br>
+            <td><b>Microsoft Teams Guide</b></td>
+            <td>Learn how to use Microsoft Teams effectively.</td>
+            <td><a href="ICT Guide/MS Teams for Staff.pdf" target="_blank">Click Here</a></td>
         </tr>
-         <tr>
+        <tr>
             <td>
                 <a href="ICT Guide/MIMS Self Help.pdf" target="_blank">
-                    <img src="Images/MIMS.png" alt="mims">
+                    <img src="Images/MIMS.png" alt="MIMS Self Help">
                 </a>
             </td>
-            <td><b></b>Reset MIMS password self help.</b><br> Click on image on the left to find out how.</td></br>
+            <td><b>MIMS Password Reset</b></td>
+            <td>Self-help guide to reset your MIMS password.</td>
+            <td><a href="ICT Guide/MIMS Self Help.pdf" target="_blank">Click Here</a></td>
         </tr>
         <tr>
             <td>
                 <a href="ICT Guide/23H2 User Guide.pdf" target="_blank">
-                    <img src="Images/update.jpg" alt="23H2">
+                    <img src="Images/update.jpg" alt="23H2 Update Guide">
                 </a>
             </td>
-            <td><b></b>Update your devices to 23H2.</b><br> Click on image on the left to find out how.</td></br>
+            <td><b>Windows 23H2 Update</b></td>
+            <td>Follow the guide to update your device to 23H2.</td>
+            <td><a href="ICT Guide/23H2 User Guide.pdf" target="_blank">Click Here</a></td>
         </tr>
         <tr>
             <td>
                 <a href="ICT Guide/Cisco VPN Guide.pdf" target="_blank">
-                    <img src="Images/vpn.png" alt="vpn">
+                    <img src="Images/vpn.png" alt="Cisco VPN Guide">
                 </a>
             </td>
-            <td><b></b>Upgrade your VPN client.</b><br> Click on image on the left to find out how </td>
+            <td><b>Cisco VPN Upgrade</b></td>
+            <td>Guide to upgrade your VPN client for secure access.</td>
+            <td><a href="ICT Guide/Cisco VPN Guide.pdf" target="_blank">Click Here</a></td>
         </tr>
     </table>
 
