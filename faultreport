@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Request Form - FVPS ICT Microsite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Menu Bar -->
+    <header class="navbar">
+        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="ictrequest.html">ICT Request</a>
+            <a href="calendar.html">Booking Calendar</a>
+            <a href="mims.html">Student iCON</a>
+            <a href="sls.html">SLS</a>
+            <a href="venue.html">Venue Booking</a>
+            <a href="fault.html">Fault Report</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1 style="font-size:200%; text-align: center;">ICT Fault Form</h1>
+        <p style="text-align: center;">Please use the form below to submit your ICT Fault Report.<br>Ensure that you are logged in to your iCON email to access the form.</p>
+        
+        <!-- Embed Google Form -->
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSezHs715njpu5-2MYBgIa9NfYrEqzzh6slE6U3c1VJk3i9lbw/viewform?embedded=true" 
+                width="90%" 
+                height="1200" 
+                frameborder="0">
+                Loading…
+            </iframe>
+        </div>   
+    </main>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
