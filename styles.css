@@ -1,158 +1,25 @@
 /* General Reset */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial,sans-serif; line-height:1.6; padding-top:60px; background:#f9f9f9; }
 
-/* Navbar Header Styles */
-.navbar {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background-color: #444; /* Darker background */
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+/* Navbar */
+.navbar { position: fixed; top:0; left:0; width:100%; height:60px; background:#004080; color:white; display:flex; align-items:center; padding:0 15px; z-index:1000; }
+.navbar .brand { font-weight:bold; font-size:1.2rem; }
+.toggle { font-size:28px; cursor:pointer; user-select:none; margin-left:auto; }
 
-/* Logo Styling */
-.navbar .logo img {
-    height: 50px; /* Adjust the height of the logo */
-    width: auto;  /* Maintain the aspect ratio */
-    margin-right: 20px; /* Space between logo and menu */
-}
+/* Sidebar Menu */
+.menu { position:fixed; top:0; left:-250px; width:250px; height:100%; background:#003366; flex-direction:column; padding-top:60px; transition:left 0.3s ease; z-index:999; display:flex; }
+.menu a { padding:15px; color:white; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.2); }
+.menu a:hover { background:#0055aa; }
+.menu.active { left:0; }
 
-/* Menu Styling */
-.navbar .menu {
-    display: flex;
-    gap: 10px;
-}
+/* Overlay */
+.overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); display:none; z-index:900; }
+.overlay.active { display:block; }
 
-.navbar .menu a {
-    color: #f4f4f9;  /* Default text color */
-    text-decoration: none;
-    padding: 10px 15px;
-}
-
-.navbar .menu a:hover {
-    color: yellow;  /* Change the text color on hover */
-    transition: color 0.3s ease;  /* Smooth transition for the text color */
-}
-
-/* Mobile Toggle Menu */
-.toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 600px) {
-    .menu {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 50px;
-        left: 0;
-    }
-    .menu.active {
-        display: flex;
-    }
-    .menu a {
-        text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid #575757;
-    }
-    .toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        color: white;
-    }
-}
-
-/* Content Styles */
-.content {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f9f9f9;
-  padding-top: 60px; /* Prevent navbar from overlapping content */
-}
-
-/* Top Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: #004080;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-  z-index: 1000;
-}
-
-/* Toggle Button */
-.toggle {
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Sidebar Menu (Hidden by default) */
-.menu {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Hidden */
-  width: 250px;
-  height: 100%;
-  background: #003366;
-  display: flex;
-  flex-direction: column;
-  padding-top: 60px;
-  transition: left 0.3s ease;
-  z-index: 999;
-}
-
-.menu a {
-  padding: 15px;
-  color: white;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.menu a:hover {
-  background: #0055aa;
-}
-
-/* Active state */
-.menu.active {
-  left: 0;
-}
-
-/* Main content */
-main {
-  padding: 20px;
-}
-
-
-
+/* Main Content */
+main { padding:20px; max-width:1000px; margin:0 auto; text-align:center; }
+table { border-collapse:collapse; margin:20px auto; width:90%; max-width:1000px; }
+th,td { border:2px solid black; padding:10px; text-align:center; }
+th { background:black; color:white; }
+img { max-width:200px; height:auto; }
