@@ -5,141 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FVPS ICT Microsite</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    /* Navbar */
-    .navbar {
-      background: #004080;
-      color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-    .navbar .toggle {
-      font-size: 1.8rem;
-      cursor: pointer;
-      display: block;
-    }
-    .navbar .brand {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    /* Overlay Menu */
-    .menu {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 75%;
-      max-width: 300px;
-      height: 100%;
-      background: #004080;
-      display: flex;
-      flex-direction: column;
-      padding-top: 60px;
-      transition: left 0.3s ease-in-out;
-      z-index: 1100;
-    }
-    .menu.active {
-      left: 0;
-    }
-    .menu a {
-      color: #fff;
-      padding: 15px 20px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-    .menu a:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    /* Overlay background */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.5);
-      display: none;
-      z-index: 1050;
-    }
-    .overlay.active {
-      display: block;
-    }
-
-    /* Push page content down */
-    body {
-      margin: 0;
-      padding-top: 60px;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Table Styling */
-    table {
-      border-collapse: collapse;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 1000px;
-    }
-    table, th, td {
-      border: 2px solid black;
-    }
-    th, td {
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background-color: black;
-      color: white;
-    }
-    img {
-      max-width: 200px;
-      height: auto;
-    }
-
-    h1 {
-      text-align: center;
-      margin: 20px 0 10px 0;
-    }
-    p {
-      text-align: center;
-      font-size: 1.2rem;
-    }
-  </style>
 </head>
 <body>
   <!-- Navbar -->
   <header class="navbar">
     <div class="brand">FVPS ICT</div>
     <div class="toggle" onclick="toggleMenu()">☰</div>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="ictrequest.html">ICT Request</a>
+      <a href="calendar.html">Booking Calendar</a>
+      <a href="mims.html">Student iCON</a>
+      <a href="sls.html">SLS</a>
+      <a href="venue.html">Venue Booking</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
-
-  <!-- Slide-out Menu -->
-  <nav class="menu">
-    <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="ictrequest.html" onclick="closeMenu()">ICT Request</a>
-    <a href="calendar.html" onclick="closeMenu()">Booking Calendar</a>
-    <a href="mims.html" onclick="closeMenu()">Student iCON</a>
-    <a href="sls.html" onclick="closeMenu()">SLS</a>
-    <a href="venue.html" onclick="closeMenu()">Venue Booking</a>
-    <a href="contact.html" onclick="closeMenu()">Contact</a>
-  </nav>
   <div class="overlay" onclick="closeMenu()"></div>
 
   <!-- Main Content -->
   <main>
     <p>Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT in this site.</p>
     <h1>Announcements & Updates</h1>
-
-    <!-- Table -->
     <table>
       <tr>
         <th>Guide Handout</th>
@@ -159,10 +46,7 @@
             <img src="Images/MIMS.png" alt="MIMS Self Help">
           </a>
         </td>
-        <td>
-          Reset MIMS password self-help.<br>
-          Click on the image to find out how.
-        </td>
+        <td>Reset MIMS password self-help. Click on the image to find out how.</td>
       </tr>
       <tr>
         <td>
@@ -175,7 +59,6 @@
     </table>
   </main>
 
-  <!-- JS -->
   <script>
     function toggleMenu() {
       document.querySelector('.menu').classList.toggle('active');
