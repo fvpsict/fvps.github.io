@@ -1,78 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - FVPS ICT Microsite</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-
-        /* WhatsApp Section */
-        .whatsapp-container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .whatsapp-container img {
-            width: 120px;
-            height: 120px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .whatsapp-container p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        /* Contact Page Styling */
-        .contact-page {
-            padding: 20px;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .contact-page h1 {
-            font-size: 2.5rem;
-            color: #333;
-        }
-        .contact-page p {
-            font-size: 1.2rem;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - FVPS ICT Microsite</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-         <!-- Menu Bar -->
-    <header class="navbar">
-        <div class="toggle" onclick="toggleMenu()">☰</div>
-        <nav class="menu">
-            <a href="index.html">Home</a>
-            <a href="ictrequest.html">ICT Request</a>
-            <a href="calendar.html">Booking Calendar</a>
-            <a href="mims.html">Student iCON</a>
-            <a href="sls.html">SLS</a>
-            <a href="venue.html">Venue Booking</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+<header class="navbar">
+    <div class="toggle" onclick="toggleMenu()">☰</div>
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="ictrequest.html">ICT Request</a>
+        <a href="calendar.html">Booking Calendar</a>
+        <a href="mims.html">Student iCON</a>
+        <a href="sls.html">SLS</a>
+        <a href="venue.html">Venue Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    </header>
+<main style="text-align:center; margin-top:20px;">
+    <h1>Contact Us</h1>
+    <p>Click on the icon below to WhatsApp the ICT Team or contact us at <strong>@91394595</strong>.</p>
+    <a href="https://wa.me/91394595" target="_blank">
+        <img src="Images/whatsapp.png" alt="WhatsApp Icon" style="width:120px;height:120px;">
+    </a>
+</main>
 
-    <!-- Contact Page Content -->
-    <div class="contact-page">
-        <h1>Contact Us</h1>
-        <p>Click on the icon below to WhatsApp the ICT Team or contact us at <strong>@91394595</strong>.</p>
-
-        <!-- WhatsApp Icon -->
-        <div class="whatsapp-container">
-            <a href="https://wa.me/91394595" class="whatsapp-icon" target="blank">
-                <img src="Images/whatsapp.png" alt="WhatsApp Icon"> <!-- Replace with an appropriate icon path -->
-            </a>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+<script>
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
+</script>
 </body>
 </html>
