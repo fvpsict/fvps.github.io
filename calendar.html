@@ -1,57 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Calendar - FVPS ICT Microsite</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Calendar - FVPS ICT Microsite</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Menu Bar -->
-    <header class="navbar">
-        <div class="toggle" onclick="toggleMenu()">☰</div>
-        <nav class="menu">
-            <a href="index.html">Home</a>
-            <a href="ictrequest.html">ICT Request</a>
-            <a href="calendar.html">Booking Calendar</a>
-            <a href="mims.html">Student iCON</a>
-            <a href="sls.html">SLS</a>
-            <a href="venue.html">Venue Booking</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<header class="navbar">
+    <div class="toggle" onclick="toggleMenu()">☰</div>
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="ictrequest.html">ICT Request</a>
+        <a href="calendar.html">Booking Calendar</a>
+        <a href="mims.html">Student iCON</a>
+        <a href="sls.html">SLS</a>
+        <a href="venue.html">Venue Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-    <!-- Main Content -->
-    <h1 style="text-align: center; margin-top: 0; display: flex; justify-content: center; align-items: center;">Booking Calendar</h1>
-    
-    <!-- Container for iframe -->
-    <div class="iframe-container">
-        <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=Asia%2FSingapore&showPrint=0&src=ZjQyZDgxNDg0MWYxMTI4M2E1ZmEzY2Y0Mjc2ZWY1OWRlMTFkYWRhNTU0NTVjZTdjMTUxNzY1ODFkM2ZjNzc2YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60" 
-        style="border:solid 1px #777" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
-    </div>
+<main style="text-align:center; margin-top:20px;">
+<iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=Asia%2FSingapore" width="1200" height="800" style="border:solid 1px #777"></iframe>
+</main>
 
-    <!-- Custom Styles -->
-    <style>
-        .iframe-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .iframe-container iframe {
-            border: 4px solid #007BFF; /* Blue border */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for aesthetics */
-        }
-    </style>
-
-    <!-- JavaScript for Menu Toggle -->
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+<script>
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
+</script>
 </body>
 </html>
