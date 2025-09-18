@@ -1,49 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICT Request Form - FVPS ICT Microsite</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICT Request Form - FVPS ICT Microsite</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Mobile Navbar */
+    .navbar {
+      background: #004080;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .toggle {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      .navbar .toggle {
+        display: block;
+      }
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #004080;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .menu a {
+        padding: 10px;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Responsive iframe */
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      width: 100%;
+      max-width: 1000px;
+      padding: 0 10px;
+    }
+    .form-container iframe {
+      width: 100%;
+      min-height: 1000px;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-     <!-- Menu Bar -->
-    <header class="navbar">
-        <div class="toggle" onclick="toggleMenu()">☰</div>
-        <nav class="menu">
-            <a href="index.html">Home</a>
-            <a href="ictrequest.html">ICT Request</a>
-            <a href="calendar.html">Booking Calendar</a>
-            <a href="mims.html">Student iCON</a>
-            <a href="sls.html">SLS</a>
-            <a href="venue.html">Venue Booking</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+  <!-- Menu Bar -->
+  <header class="navbar">
+    <div class="toggle" onclick="toggleMenu()">☰</div>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="ictrequest.html">ICT Request</a>
+      <a href="calendar.html">Booking Calendar</a>
+      <a href="mims.html">Student iCON</a>
+      <a href="sls.html">SLS</a>
+      <a href="venue.html">Venue Booking</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    </header>
+  <!-- Main Content -->
+  <main>
+    <h1 style="font-size:200%; text-align: center;">ICT Request Form</h1>
+    <p style="text-align: center;">
+      Please use the form below to submit your ICT request.<br>
+      Ensure that you are logged in to your iCON email to access the form.
+    </p>
+    
+    <!-- Embed Google Form -->
+    <div class="form-container">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfK9XaUF_bydPMy7pqpA2L05hQJ0PUG1YOq3r2PuLzk5k0A_Q/viewform"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </main>
 
-    <!-- Main Content -->
-    <main>
-        <h1 style="font-size:200%; text-align: center;">ICT Request Form</h1>
-        <p style="text-align: center;">Please use the form below to submit your ICT request.<br>Ensure that you are logged in to your iCON email to access the form.</p>
-        
-        <!-- Embed Google Form -->
-        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfK9XaUF_bydPMy7pqpA2L05hQJ0PUG1YOq3r2PuLzk5k0A_Q/viewform" 
-                width="90%" 
-                height="1200" 
-                frameborder="0">
-                Loading…
-            </iframe>
-        </div>   
-    </main>
-
-    <!-- JavaScript for Menu Toggle -->
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
