@@ -1,17 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FVPS ICT Microsite</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
+    /* Navbar */
+    .navbar {
+      background: #004080;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .navbar .toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
+      display: block;
+    }
+    .navbar .brand {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Overlay Menu */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 75%;
+      max-width: 300px;
+      height: 100%;
+      background: #004080;
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+      transition: left 0.3s ease-in-out;
+      z-index: 1100;
+    }
+    .menu.active {
+      left: 0;
+    }
+    .menu a {
+      color: #fff;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .menu a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Overlay background */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 1050;
+    }
+    .overlay.active {
+      display: block;
+    }
+
+    /* Push page content down */
+    body {
+      margin: 0;
+      padding-top: 60px;
+      font-family: Arial, sans-serif;
+    }
+
     /* Table Styling */
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1000px;
+    }
     table, th, td {
       border: 2px solid black;
     }
@@ -27,99 +104,87 @@
       max-width: 200px;
       height: auto;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 10px;
+      margin: 20px 0 10px 0;
+    }
+    p {
+      text-align: center;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-  <!-- Responsive Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">FVPS ICT</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav" aria-controls="navbarNav"
-              aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="brand">FVPS ICT</div>
+    <div class="toggle" onclick="toggleMenu()">☰</div>
+  </header>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="ictrequest.html">ICT Request</a></li>
-          <li class="nav-item"><a class="nav-link" href="calendar.html">Booking Calendar</a></li>
-          <li class="nav-item"><a class="nav-link" href="mims.html">Student iCON</a></li>
-          <li class="nav-item"><a class="nav-link" href="sls.html">SLS</a></li>
-          <li class="nav-item"><a class="nav-link" href="venue.html">Venue Booking</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+  <!-- Slide-out Menu -->
+  <nav class="menu">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="ictrequest.html" onclick="closeMenu()">ICT Request</a>
+    <a href="calendar.html" onclick="closeMenu()">Booking Calendar</a>
+    <a href="mims.html" onclick="closeMenu()">Student iCON</a>
+    <a href="sls.html" onclick="closeMenu()">SLS</a>
+    <a href="venue.html" onclick="closeMenu()">Venue Booking</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
   </nav>
+  <div class="overlay" onclick="closeMenu()"></div>
 
   <!-- Main Content -->
-  <div class="container" style="margin-top: 90px;">
-    <p class="fs-4 text-center">
-      Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT in this site.
-    </p>
-
+  <main>
+    <p>Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT in this site.</p>
     <h1>Announcements & Updates</h1>
 
-    <!-- Responsive Table -->
-    <div class="table-responsive">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Guide Handout</th>
-            <th>Item Description</th>
-            <th>Guide Handout</th>
-            <th>Item Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <a href="ICT Guide/MS Teams for Staff.pdf" target="_blank">
-                <img src="Images/MS Teams.png" class="img-fluid" alt="MS Teams">
-              </a>
-              <p class="small">
-                "<a href="https://commons.wikimedia.org/w/index.php?curid=90215414" target="_blank">Microsoft Teams</a>" by 
-                <a href="https://commons.wikimedia.org/w/index.php?title=User:Sosalmediahelp&action=edit&redlink=1" target="_blank">Sosalmediahelp</a>
-                is licensed under 
-                <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse" target="_blank">
-                  CC BY-SA 4.0
-                </a>.
-              </p>
-            </td>
-            <td>Click to know how to use Microsoft Teams</td>
-            <td>
-              <a href="ICT Guide/MIMS Self Help.pdf" target="_blank">
-                <img src="Images/MIMS.png" class="img-fluid" alt="MIMS Self Help">
-              </a>
-            </td>
-            <td>
-              Reset MIMS password self-help.<br>
-              Click on the image to find out how.
-            </td>
-          </tr>
+    <!-- Table -->
+    <table>
+      <tr>
+        <th>Guide Handout</th>
+        <th>Item Description</th>
+        <th>Guide Handout</th>
+        <th>Item Description</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="ICT Guide/MS Teams for Staff.pdf" target="_blank">
+            <img src="Images/MS Teams.png" alt="MS Teams">
+          </a>
+        </td>
+        <td>Click to know how to use Microsoft Teams</td>
+        <td>
+          <a href="ICT Guide/MIMS Self Help.pdf" target="_blank">
+            <img src="Images/MIMS.png" alt="MIMS Self Help">
+          </a>
+        </td>
+        <td>
+          Reset MIMS password self-help.<br>
+          Click on the image to find out how.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="Images/newpassword.jpg" target="_blank">
+            <img src="Images/password.jpg" alt="Password Policy">
+          </a>
+        </td>
+        <td colspan="3">Changes in password policy. Click the image to find out more.</td>
+      </tr>
+    </table>
+  </main>
 
-          <tr>
-            <td>
-              <a href="Images/newpassword.jpg" target="_blank">
-                <img src="Images/password.jpg" class="img-fluid" alt="Password Policy">
-              </a>
-            </td>
-            <td colspan="3">
-              Changes in password policy. Click the image to find out more.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('active');
+      document.querySelector('.overlay').classList.toggle('active');
+    }
+    function closeMenu() {
+      document.querySelector('.menu').classList.remove('active');
+      document.querySelector('.overlay').classList.remove('active');
+    }
+  </script>
 </body>
 </html>
