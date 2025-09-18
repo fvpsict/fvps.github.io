@@ -1,68 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICT Request Form - FVPS ICT Microsite</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+
   <style>
-    /* Mobile Navbar */
+    /* Navbar */
     .navbar {
       background: #004080;
       color: #fff;
-      padding: 10px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
     }
     .navbar .toggle {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      display: none;
+      display: block;
     }
+    .navbar .brand {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Overlay Menu */
     .menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 75%;
+      max-width: 300px;
+      height: 100%;
+      background: #004080;
       display: flex;
-      gap: 15px;
+      flex-direction: column;
+      padding-top: 60px;
+      transition: left 0.3s ease-in-out;
+      z-index: 1100;
+    }
+    .menu.active {
+      left: 0;
     }
     .menu a {
       color: #fff;
+      padding: 15px 20px;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
     }
-    /* Mobile Menu */
-    @media (max-width: 768px) {
-      .navbar .toggle {
-        display: block;
-      }
-      .menu {
-        display: none;
-        flex-direction: column;
-        background: #004080;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
-      }
-      .menu.active {
-        display: flex;
-      }
-      .menu a {
-        padding: 10px;
-        text-align: center;
-        font-size: 1.2rem;
-      }
+    .menu a:hover {
+      background: rgba(255,255,255,0.1);
     }
 
-    /* Responsive iframe */
+    /* Overlay background */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 1050;
+    }
+    .overlay.active {
+      display: block;
+    }
+
+    /* Push page content down */
+    body {
+      margin: 0;
+      padding-top: 60px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Main content */
+    main {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+    }
     .form-container {
       display: flex;
       justify-content: center;
-      align-items: center;
-      margin: 20px auto;
-      width: 100%;
-      max-width: 1000px;
-      padding: 0 10px;
+      margin-top: 20px;
     }
     .form-container iframe {
       width: 100%;
@@ -72,41 +109,48 @@
   </style>
 </head>
 <body>
-  <!-- Menu Bar -->
+  <!-- Navbar -->
   <header class="navbar">
+    <div class="brand">FVPS ICT</div>
     <div class="toggle" onclick="toggleMenu()">☰</div>
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="ictrequest.html">ICT Request</a>
-      <a href="calendar.html">Booking Calendar</a>
-      <a href="mims.html">Student iCON</a>
-      <a href="sls.html">SLS</a>
-      <a href="venue.html">Venue Booking</a>
-      <a href="contact.html">Contact</a>
-    </nav>
   </header>
+
+  <!-- Slide-out Menu -->
+  <nav class="menu">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="ictrequest.html" onclick="closeMenu()">ICT Request</a>
+    <a href="calendar.html" onclick="closeMenu()">Booking Calendar</a>
+    <a href="mims.html" onclick="closeMenu()">Student iCON</a>
+    <a href="sls.html" onclick="closeMenu()">SLS</a>
+    <a href="venue.html" onclick="closeMenu()">Venue Booking</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+  </nav>
+  <div class="overlay" onclick="closeMenu()"></div>
 
   <!-- Main Content -->
   <main>
-    <h1 style="font-size:200%; text-align: center;">ICT Request Form</h1>
-    <p style="text-align: center;">
-      Please use the form below to submit your ICT request.<br>
-      Ensure that you are logged in to your iCON email to access the form.
-    </p>
-    
+    <h1>ICT Request Form</h1>
+    <p>Please use the form below to submit your ICT request.<br>
+      Ensure that you are logged in to your iCON email to access the form.</p>
+
     <!-- Embed Google Form -->
     <div class="form-container">
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfK9XaUF_bydPMy7pqpA2L05hQJ0PUG1YOq3r2PuLzk5k0A_Q/viewform"
         allowfullscreen>
+        Loading…
       </iframe>
     </div>
   </main>
 
-  <!-- JavaScript for Menu Toggle -->
+  <!-- JS -->
   <script>
     function toggleMenu() {
-      const menu = document.querySelector('.menu');
-      menu.classList.toggle('active');
+      document.querySelector('.menu').classList.toggle('active');
+      document.querySelector('.overlay').classList.toggle('active');
+    }
+    function closeMenu() {
+      document.querySelector('.menu').classList.remove('active');
+      document.querySelector('.overlay').classList.remove('active');
     }
   </script>
 </body>
