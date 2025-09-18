@@ -23,3 +23,17 @@ table { border-collapse:collapse; margin:20px auto; width:90%; max-width:1000px;
 th,td { border:2px solid black; padding:10px; text-align:center; }
 th { background:black; color:white; }
 img { max-width:200px; height:auto; }
+
+/* Brand Styling */
+.navbar .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-right: auto;
+  padding: 10px 15px;
+}
+
+.navbar .brand:hover {
+  color: #ddd; /* Same hover effect as links */
+}
