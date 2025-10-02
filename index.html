@@ -9,16 +9,17 @@
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    <!-- Brand is now a clickable link -->
+    <!-- Brand links back to homepage -->
     <a href="index.html" class="brand">FVPS ICT</a>
     <div class="toggle" onclick="toggleMenu()">☰</div>
     <nav class="menu">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="ictrequest.html">ICT Request</a>
       <a href="calendar.html">Booking Calendar</a>
       <a href="mims.html">Student iCON</a>
       <a href="sls.html">SLS</a>
       <a href="venue.html">Venue Booking</a>
+      <a href="ictfault.html">ICT Faults</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -60,6 +61,7 @@
     </table>
   </main>
 
+  <!-- JavaScript -->
   <script>
     function toggleMenu() {
       document.querySelector('.menu').classList.toggle('active');
