@@ -1,113 +1,155 @@
-/* General Reset */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { 
-  font-family: Arial, sans-serif; 
-  line-height:1.6; 
-  padding-top:60px; 
-  background:#f9f9f9; 
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICT Faults - FVPS ICT Microsite</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  /* General Reset */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { 
+    font-family: Arial, sans-serif; 
+    line-height:1.6; 
+    padding-top:60px; 
+    background:#f9f9f9; 
+  }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:60px;
-  background:#004080; color:white;
-  display:flex; align-items:center;
-  justify-content:space-between;
-  padding:0 15px;
-  z-index:1000;
-}
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:60px;
+    background:#004080; color:white;
+    display:flex; align-items:center;
+    justify-content:flex-start; /* items aligned left */
+    padding:0 15px;
+    z-index:1000;
+  }
 
-/* Brand Styling */
-.navbar .brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-}
-.navbar .brand:hover { color:#ddd; }
+  /* Toggle Button */
+  .toggle {
+    font-size:28px;
+    cursor:pointer;
+    user-select:none;
+    margin-right:15px; /* spacing between toggle and brand */
+  }
 
-/* Toggle Button */
-.toggle {
-  font-size:28px;
-  cursor:pointer;
-  user-select:none;
-}
+  /* Brand Styling */
+  .navbar .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  .navbar .brand:hover { color:#ddd; }
 
-/* Sidebar Menu */
-.menu {
-  position:fixed;
-  top:0; left:-250px;
-  width:250px; height:100%;
-  background:#003366;
-  flex-direction:column;
-  padding-top:60px;
-  transition:left 0.3s ease;
-  z-index:999;
-  display:flex;
-}
-.menu a {
-  padding:15px;
-  color:white;
-  text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,0.2);
-}
-.menu a:hover { background:#0055aa; }
-.menu.active { left:0; }
+  /* Sidebar Menu */
+  .menu {
+    position:fixed;
+    top:0; left:-250px;
+    width:250px; height:100%;
+    background:#003366;
+    flex-direction:column;
+    padding-top:60px;
+    transition:left 0.3s ease;
+    z-index:999;
+    display:flex;
+  }
+  .menu a {
+    padding:15px;
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+  }
+  .menu a:hover { background:#0055aa; }
+  .menu.active { left:0; }
 
-/* Overlay */
-.overlay {
-  position:fixed;
-  top:0; left:0; right:0; bottom:0;
-  background:rgba(0,0,0,0.5);
-  display:none;
-  z-index:900;
-}
-.overlay.active { display:block; }
+  /* Overlay */
+  .overlay {
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,0.5);
+    display:none;
+    z-index:900;
+  }
+  .overlay.active { display:block; }
 
-/* Main Content */
-main {
-  padding:20px;
-  max-width:1000px;
-  margin:0 auto;
-  text-align:center;
-}
+  /* Main Content */
+  main {
+    padding:20px;
+    max-width:1000px;
+    margin:0 auto;
+    text-align:center;
+  }
 
-/* Tables */
-table {
-  border-collapse:collapse;
-  margin:20px auto;
-  width:90%;
-  max-width:1000px;
-}
-th,td {
-  border:2px solid black;
-  padding:10px;
-  text-align:center;
-}
-th {
-  background:black;
-  color:white;
-}
+  /* Tables */
+  table {
+    border-collapse:collapse;
+    margin:20px auto;
+    width:90%;
+    max-width:1000px;
+  }
+  th,td {
+    border:2px solid black;
+    padding:10px;
+    text-align:center;
+  }
+  th {
+    background:black;
+    color:white;
+  }
 
-/* Images */
-img { max-width:200px; height:auto; }
+  /* Images */
+  img { max-width:200px; height:auto; }
 
-/* ICT Fault Page Specific */
-.note {
-  font-size:15px; 
-  color:#000;
-  margin:10px 0;
-}
-.footer-note {
-  font-size:12px; 
-  color:#999; 
-  margin-top:5px;
-}
-iframe {
-  width:100%; 
-  height:500px; 
-  border:none;
-}
+  /* ICT Fault Page Specific */
+  .note {
+    font-size:15px; 
+    color:#000;
+    margin:10px 0;
+  }
+  .footer-note {
+    font-size:12px; 
+    color:#999; 
+    margin-top:5px;
+  }
+  iframe {
+    width:100%; 
+    height:500px; 
+    border:none;
+  }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <span class="toggle" onclick="toggleMenu()">☰</span>
+    <a href="index.html" class="brand">FVPS ICT Microsite</a>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <div id="menu" class="menu">
+    <a href="index.html">Home</a>
+    <a href="view-inventory/index.html">Inventory</a>
+    <a href="fault-report.html">Fault Report</a>
+    <a href="patching/patching-report.html">Patching Report</a>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <main>
+    <h1>ICT Faults</h1>
+    <p class="note">This is the ICT faults page content.</p>
+    <iframe src="your-iframe-link.html"></iframe>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
