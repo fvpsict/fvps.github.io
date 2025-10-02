@@ -1,6 +1,11 @@
 /* General Reset */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: Arial,sans-serif; line-height:1.6; padding-top:60px; background:#f9f9f9; }
+body { 
+  font-family: Arial, sans-serif; 
+  line-height:1.6; 
+  padding-top:60px; 
+  background:#f9f9f9; 
+}
 
 /* Navbar */
 .navbar {
@@ -22,10 +27,7 @@ body { font-family: Arial,sans-serif; line-height:1.6; padding-top:60px; backgro
   text-decoration: none;
   padding: 10px 15px;
 }
-
-.navbar .brand:hover {
-  color: #ddd;
-}
+.navbar .brand:hover { color:#ddd; }
 
 /* Toggle Button */
 .toggle {
@@ -72,6 +74,8 @@ main {
   margin:0 auto;
   text-align:center;
 }
+
+/* Tables */
 table {
   border-collapse:collapse;
   margin:20px auto;
@@ -87,4 +91,23 @@ th {
   background:black;
   color:white;
 }
+
+/* Images */
 img { max-width:200px; height:auto; }
+
+/* ICT Fault Page Specific */
+.note {
+  font-size:15px; 
+  color:#000;
+  margin:10px 0;
+}
+.footer-note {
+  font-size:12px; 
+  color:#999; 
+  margin-top:5px;
+}
+iframe {
+  width:100%; 
+  height:500px; 
+  border:none;
+}
