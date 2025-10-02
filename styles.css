@@ -32,8 +32,10 @@
     font-size:28px;
     cursor:pointer;
     user-select:none;
-    margin-right:15px; /* spacing between toggle and brand */
-  }
+    margin-right:10px; /* spacing between toggle and brand */
+}
+
+
 
   /* Brand Styling */
   .navbar .brand {
