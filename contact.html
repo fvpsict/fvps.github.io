@@ -6,7 +6,7 @@
 <title>Contact - FVPS ICT Microsite</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Navbar adjustments for toggle + brand */
+/* Navbar */
 .navbar {
     position: fixed;
     top:0; left:0;
@@ -36,8 +36,10 @@
 
 .menu {
     position: fixed;
-    top:0; left:-250px;
-    width:250px; height:100%;
+    top:0; left:-80%;
+    width:80%;
+    max-width:250px;
+    height:100%;
     background:#003366;
     flex-direction: column;
     padding-top:60px;
@@ -53,7 +55,10 @@
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.menu a:hover { background:#0055aa; }
+.menu a:hover, .menu a.active {
+    background:#0055aa;
+}
+
 .menu.active { left:0; }
 
 .overlay {
@@ -66,15 +71,48 @@
 
 .overlay.active { display:block; }
 
-main { padding-top:80px; text-align:center; }
+main {
+    padding-top:80px;
+    text-align:center;
+    font-family: Arial, sans-serif;
+}
+
+main h1 {
+    margin-bottom:20px;
+}
+
+main p {
+    font-size:1.1rem;
+    margin-bottom:20px;
+}
+
+main a img {
+    width:120px;
+    height:120px;
+    transition: transform 0.2s ease;
+}
+
+main a img:hover {
+    transform: scale(1.1);
+}
+
+.contact-number a {
+    color:#004080;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.contact-number a:hover {
+    text-decoration:underline;
+}
 </style>
 </head>
 <body>
 
 <header class="navbar">
-    <div class="toggle" onclick="toggleMenu()">☰</div>
+    <div class="toggle" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">☰</div>
     <a href="index.html" class="brand">FVPS ICT</a>
-    <nav class="menu"> 
+    <nav class="menu" aria-hidden="true"> 
         <a href="index.html">Home</a>
         <a href="ictrequest.html">ICT Request</a>
         <a href="calendar.html">Booking Calendar</a>
@@ -90,21 +128,34 @@ main { padding-top:80px; text-align:center; }
 
 <main>
     <h1>Contact Us</h1>
-    <p>Click on the icon below to WhatsApp the ICT Team or contact us at <strong>@91394595</strong>.</p>
-    <a href="https://wa.me/91394595" target="_blank">
-        <img src="Images/whatsapp.png" alt="WhatsApp Icon" style="width:120px;height:120px;">
+    <p>Click the icon below to WhatsApp the ICT Team or reach us directly at:</p>
+    <div class="contact-number">
+        <a href="tel:+6591394595">+65 9139 4595</a>
+    </div>
+    <a href="https://wa.me/6591394595" target="_blank" rel="noopener noreferrer">
+        <img src="Images/whatsapp.png" alt="WhatsApp Icon">
     </a>
 </main>
 
 <script>
 function toggleMenu() {
-    document.querySelector('.menu').classList.toggle('active');
-    document.querySelector('.overlay').classList.toggle('active');
+    const menu = document.querySelector('.menu');
+    const overlay = document.querySelector('.overlay');
+    const toggle = document.querySelector('.toggle');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
+    menu.setAttribute('aria-hidden', !menu.classList.contains('active'));
 }
 
 function closeMenu() {
-    document.querySelector('.menu').classList.remove('active');
-    document.querySelector('.overlay').classList.remove('active');
+    const menu = document.querySelector('.menu');
+    const overlay = document.querySelector('.overlay');
+    const toggle = document.querySelector('.toggle');
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    toggle.setAttribute('aria-expanded', false);
+    menu.setAttribute('aria-hidden', true);
 }
 </script>
 
