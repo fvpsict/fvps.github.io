@@ -73,4 +73,40 @@ main { padding-top:80px; text-align:center; }
 
 <header class="navbar">
     <div class="toggle" onclick="toggleMenu()">☰</div>
-    <a href="index.html" class="brand">FVPS ICT</
+    <a href="index.html" class="brand">FVPS ICT</a>
+    <nav class="menu"> 
+        <a href="index.html">Home</a>
+        <a href="ictrequest.html">ICT Request</a>
+        <a href="calendar.html">Booking Calendar</a>
+        <a href="mims.html">Student iCON</a>
+        <a href="sls.html">SLS</a>
+        <a href="venue.html">Venue Booking</a>
+        <a href="ictfault.html">ICT Fault</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
+
+<div class="overlay" onclick="closeMenu()"></div>
+
+<main>
+    <h1>Contact Us</h1>
+    <p>Click on the icon below to WhatsApp the ICT Team or contact us at <strong>@91394595</strong>.</p>
+    <a href="https://wa.me/91394595" target="_blank">
+        <img src="Images/whatsapp.png" alt="WhatsApp Icon" style="width:120px;height:120px;">
+    </a>
+</main>
+
+<script>
+function toggleMenu() {
+    document.querySelector('.menu').classList.toggle('active');
+    document.querySelector('.overlay').classList.toggle('active');
+}
+
+function closeMenu() {
+    document.querySelector('.menu').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
