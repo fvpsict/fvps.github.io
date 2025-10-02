@@ -121,6 +121,30 @@
 </head>
 <body>
   <!-- Navbar -->
+<header class="navbar">
+    <div class="toggle" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="brand">FVPS ICT</a>
+</header>
+
+<!-- Sidebar Menu -->
+<nav class="menu">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="ictrequest.html" class="active" onclick="closeMenu()">ICT Request</a>
+    <a href="calendar.html" onclick="closeMenu()">Booking Calendar</a>
+    <a href="mims.html" onclick="closeMenu()">Student iCON</a>
+    <a href="sls.html" onclick="closeMenu()">SLS</a>
+    <a href="venue.html" onclick="closeMenu()">Venue Booking</a>
+    <a href="ictfault.html" onclick="closeMenu()">ICT Fault</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+</nav>
+
+<!-- Overlay -->
+<div class="overlay" onclick="closeMenu()"></div>
+
+
+
+
+  
   <header class="navbar">
   <div class="toggle" onclick="toggleMenu()">☰</div>
   <div class="brand">FVPS ICT</div>
