@@ -125,8 +125,8 @@ main h2 {
 }
 
 .icon-links img.icon {
-  width: 100px; /* increased size */
-  height: 100px; /* increased size */
+  width: 120px; /* increased size */
+  height: 120px; /* increased size */
   object-fit: contain;
   transition: transform 0.2s;
 }
