@@ -11,9 +11,11 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 60px;
-      background: #004080; color: white;
-      display: flex; align-items: center;
-      justify-content: flex-start;  /* keep items left */
+      background: #004080;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       padding: 0 15px;
       z-index: 1000;
     }
@@ -22,7 +24,7 @@
       font-size: 28px;
       cursor: pointer;
       user-select: none;
-      margin-right: 15px; /* space between toggle and brand */
+      margin-right: 15px;
     }
 
     .brand {
@@ -31,8 +33,10 @@
       color: white;
       text-decoration: none;
     }
+
     .brand:hover { color: #ddd; }
 
+    /* Sidebar menu */
     .menu {
       position: fixed;
       top: 0; left: -250px;
@@ -44,12 +48,14 @@
       z-index: 999;
       display: flex;
     }
+
     .menu a {
       padding: 15px;
       color: white;
       text-decoration: none;
       border-bottom: 1px solid rgba(255,255,255,0.2);
     }
+
     .menu a:hover { background: #0055aa; }
     .menu.active { left: 0; }
 
@@ -60,15 +66,87 @@
       display: none;
       z-index: 900;
     }
+
     .overlay.active { display: block; }
+
+    /* Main content */
+    main {
+      padding: 80px 20px 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    main h1, main h2 {
+      margin-bottom: 20px;
+      color: #004080;
+    }
+
+    /* Icon links grid */
+    .icon-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .icon-links a {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .icon-links img.icon {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      transition: transform 0.2s;
+    }
+
+    .icon-links img.icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    table th {
+      background-color: #004080;
+      color: white;
+    }
+
+    table img {
+      max-width: 80px;
+      height: auto;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .icon-links {
+        justify-content: center;
+      }
+      table, table th, table td {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-<header class="navbar">
-    <div class="toggle" onclick="toggleMenu()">☰</div>
+  <header class="navbar">
+    <div class="toggle" onclick="toggleMenu()" aria-label="Toggle sidebar menu">☰</div>
     <a href="index.html" class="brand">FVPS ICT</a>
-</header>
+  </header>
   
   <!-- Sidebar Menu -->
   <nav class="menu">
@@ -85,37 +163,32 @@
 
   <!-- Main Content -->
   <main>
-    <p>Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT in this site.</p>
+    <p>Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT on this site.</p>
 
-  <table>
-  
-     <!-- Icon Links Section -->
-  <h2>Quick Links</h2>
-  <div class="icon-links">
-    <a href="ictrequest.html" title="ICT Request">
-      <img src="Images/ICTRequest.png" alt="ICT Request" class="icon">
-    </a>
-    <a href="calendar.html" title="Booking Calendar">
-      <img src="Images/Calendar.png" alt="Booking Calendar" class="icon">
-    </a>
-    <a href="mims.html" title="Student iCON">
-      <img src="Images/MIMS.png" alt="Student iCON" class="icon">
-    </a>
-    <a href="sls.html" title="SLS">
-      <img src="Images/SLS.png" alt="SLS" class="icon">
-    </a>
-    <a href="venue.html" title="Venue Booking">
-      <img src="Images/Venue.png" alt="Venue Booking" class="icon">
-    </a>
-    <a href="ictfault.html" title="ICT Fault">
-      <img src="Images/ICTFault.png" alt="ICT Fault" class="icon">
-    </a>
-  </div>
-  </table>  
+    <!-- Quick Links -->
+    <h2>Quick Links</h2>
+    <div class="icon-links">
+      <a href="ictrequest.html" title="ICT Request">
+        <img src="Images/ICTRequest.png" alt="ICT Request" class="icon">
+      </a>
+      <a href="calendar.html" title="Booking Calendar">
+        <img src="Images/Calendar.png" alt="Booking Calendar" class="icon">
+      </a>
+      <a href="mims.html" title="Student iCON">
+        <img src="Images/MIMS.png" alt="Student iCON" class="icon">
+      </a>
+      <a href="sls.html" title="SLS">
+        <img src="Images/SLS.png" alt="SLS" class="icon">
+      </a>
+      <a href="venue.html" title="Venue Booking">
+        <img src="Images/Venue.png" alt="Venue Booking" class="icon">
+      </a>
+      <a href="ictfault.html" title="ICT Fault">
+        <img src="Images/ICTFault.png" alt="ICT Fault" class="icon">
+      </a>
+    </div>
 
-
-
-    
+    <!-- Announcements Table -->
     <h1>Announcements & Updates</h1>
     <table>
       <tr>
