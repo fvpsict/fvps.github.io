@@ -79,19 +79,25 @@
     main h1, main h2 {
       margin-bottom: 20px;
       color: #004080;
+      text-align: center;
     }
 
-    /* Icon links grid */
+    /* Icon links grid with labels */
     .icon-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      justify-content: center;
+      gap: 30px;
       margin-bottom: 40px;
     }
 
     .icon-links a {
-      display: inline-block;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #004080;
+      width: 100px; /* fixed width for alignment */
     }
 
     .icon-links img.icon {
@@ -103,6 +109,16 @@
 
     .icon-links img.icon:hover {
       transform: scale(1.1);
+    }
+
+    .icon-label {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .icon-links a:hover .icon-label {
+      color: #0055aa;
     }
 
     /* Tables */
@@ -132,11 +148,21 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .icon-links {
-        justify-content: center;
+      .icon-links a {
+        width: 30%;
+      }
+      .icon-links img.icon {
+        width: 60px;
+        height: 60px;
       }
       table, table th, table td {
         font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .icon-links a {
+        width: 45%;
       }
     }
   </style>
@@ -163,28 +189,34 @@
 
   <!-- Main Content -->
   <main>
-    <p>Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT on this site.</p>
+    <p style="text-align:center;">Welcome to FVPS ICT Microsite. You can find all the information about FVPS ICT on this site.</p>
 
     <!-- Quick Links -->
     <h2>Quick Links</h2>
     <div class="icon-links">
       <a href="ictrequest.html" title="ICT Request">
         <img src="Images/ictrequest.jpg" alt="ICT Request" class="icon">
+        <span class="icon-label">ICT Request</span>
       </a>
       <a href="calendar.html" title="Booking Calendar">
         <img src="Images/calendar.jpg" alt="Booking Calendar" class="icon">
+        <span class="icon-label">Booking Calendar</span>
       </a>
       <a href="mims.html" title="Student iCON">
         <img src="Images/MIMS.png" alt="Student iCON" class="icon">
+        <span class="icon-label">Student iCON</span>
       </a>
       <a href="sls.html" title="SLS">
         <img src="Images/sls.png" alt="SLS" class="icon">
+        <span class="icon-label">SLS</span>
       </a>
       <a href="venue.html" title="Venue Booking">
         <img src="Images/rbs.jpg" alt="Venue Booking" class="icon">
+        <span class="icon-label">Venue Booking</span>
       </a>
       <a href="ictfault.html" title="ICT Fault">
         <img src="Images/fault.png" alt="ICT Fault" class="icon">
+        <span class="icon-label">ICT Fault</span>
       </a>
     </div>
 
