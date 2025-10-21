@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student iCON - FVPS ICT Microsite</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student iCON - FVPS ICT Microsite</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-   <!-- Navbar -->
-    <header class="navbar">
-    <div class="toggle" onclick="toggleMenu()">☰</div>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</div>
     <a href="index.html" class="brand">FVPS ICT</a>
-</header>
-    <nav class="menu">
-      <a href="index.html" class="active">Home</a>
-      <a href="ictrequest.html">ICT Request</a>
-      <a href="calendar.html">Booking Calendar</a>
-      <a href="mims.html">Student iCON</a>
-      <a href="sls.html">SLS</a>
-      <a href="venue.html">Venue Booking</a>
-      <a href="ictfault.html">ICT Fault Report</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    </header>
+  </header>
 
-    <main class="main-content">
-        <h1>Student iCON</h1>
-        <p><b></b>Welcome to the Student iCON page! Resources and links will be provided here.</p></b><br>
-        <p>To access Student iCON details, you can find the list here:</p>
-        <p><b></b>Sharing: \_Fernvale Mall\CR 4_Resource Management\4.7 Information\Student Information\Student iCON</p></b><br>
+  <!-- Navigation Menu -->
+  <nav class="menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="ictrequest.html">ICT Request</a>
+    <a href="calendar.html">Booking Calendar</a>
+    <a href="mims.html">Student iCON</a>
+    <a href="sls.html">SLS</a>
+    <a href="venue.html">Venue Booking</a>
+    <a href="ictfault.html">ICT Fault Report</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-        <P><b>Changes to MIMS Portal</P></b>
-        <img src="Images/mimschanges.jpg" alt="MIMS changes" width="800">
-        <a href="Images/mimschanges.jpg" target=_blank></a>
-    </main>
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Student iCON</h1>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+    <p>
+      Welcome to the <strong>Student iCON</strong> page! Resources and links will be provided here.
+    </p>
+
+    <p>
+      To access Student iCON details, you can find the list here:
+    </p>
+
+    <p>
+      <strong>Sharing Path:</strong>
+      \\_Fernvale Mall\\CR 4_Resource Management\\4.7 Information\\Student Information\\Student iCON
+    </p>
+
+    <h2>Changes to MIMS Portal</h2>
+    <figure>
+      <a href="Images/mimschanges.jpg" target="_blank">
+        <img src="Images/mimschanges.jpg" alt="MIMS Portal Changes" width="800" />
+      </a>
+      <figcaption>MIMS Portal update notice</figcaption>
+    </figure>
+  </main>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      menu.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
